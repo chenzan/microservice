@@ -1,0 +1,17 @@
+spring:
+  application:
+      name: cz-auth
+  redis:
+      host: 127.0.0.1
+      port: 6379
+server:
+  port: 8889
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:pwd@localhost:8888/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    prefer-ip-address: true #可以将IP注册到Eureka Server
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20

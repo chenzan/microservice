@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: cz-eureka
+  security:
+    basic:
+      enabled: true # 启用身份认证
+    user:
+      name: user
+      password: pwd
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZooe: http://127.0.0.1:8888/eureka/
+    register-with-eureka: false #不向服务中心注册自己
+    fetch-registry: false #禁用从Eureka Server 获取注册信息
+    #服务注册中心相互注册一定要显示的设置register-with-eureka 和fetch-registry的值为true,否则会服务不可用
+  server:
+  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+ribbon:
+  eager-load:
+    enabled: true
+    clients: cz-auth,cz-gateway,ca-user,ca-message
