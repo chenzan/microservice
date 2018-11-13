@@ -6,9 +6,19 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://user:pwd@localhost:8888/eureka
+      defaultZone: http://user:pwd@127.0.0.1:8888/eureka
     registry-fetch-interval-seconds: 10
   instance:
     prefer-ip-address: true #可以将IP注册到Eureka Server
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 20
+zuul:
+  routes:
+    model-auth:
+      path: /auth/**
+      serviceId: cz-auth
+    model-user:
+      path: /user/**
+      serviceId: cz-user
+      stripPrefix: false
+  ignored-patterns: '*'
