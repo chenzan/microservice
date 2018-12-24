@@ -42,7 +42,23 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
             <scope>runtime</scope>
+        </dependency>
+        <!--HikariCP连接池-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.shardingjdbc</groupId>-->
+            <!--<artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>-->
+            <!--<version>${sharding-jdbc-core-spring-boot-starter.version}</version>-->
+        <!--</dependency>-->
+        <!-- mybatis-plus begin -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
     </dependencies>
 

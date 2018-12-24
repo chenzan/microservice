@@ -12,9 +12,8 @@ import java.lang.reflect.Type;
  */
 public abstract class BaseService<B, M extends BaseMapper> {
     private Class<M> mClass;
-    protected M mMapper;
     @Autowired
-    SpringApplicationContextHelper springContextHolder;
+    protected M mMapper;
 
     public BaseService() {
         Class<?> aClass = this.getClass();
