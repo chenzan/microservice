@@ -13,7 +13,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZooe: http://127.0.0.1:8888/eureka/
+      defaultZone: http://127.0.0.1:8888/eureka/
     register-with-eureka: false #不向服务中心注册自己
     fetch-registry: false #禁用从Eureka Server 获取注册信息
     #服务注册中心相互注册一定要显示的设置register-with-eureka 和fetch-registry的值为true,否则会服务不可用
